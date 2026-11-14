@@ -1,261 +1,27 @@
-
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aula 12 - Formulários</title>
-    <link rel="stylesheet" href="estilo.css">
-
-    <style>
-        #mostra {
-            position: fixed;
-            top: 20%;
-            right: 50%;
-            border: solid 2px;
-            padding: 15px;
-            background-color: white;
-            max-height: 70%;
-            overflow-y: auto;
-            
-            border-radius: 10px;
-            box-shadow: 0 2px 5px gray ;
-        }
-    </style>
+    <title>Minha primeira página HTML</title>
 </head>
-
 <body>
 
-<header>
-    <h1>Aula 12 - Formulários</h1>
-</header>
+    <h1>Minha primeira página HTML</h1>
 
-<nav></nav>
+    <h2>Sobre mim</h2>
+    <p>Olá! Meu nome é Emanuel.</p>
+    <p>Estou estudando Desenvolvimento de Sistemas.</p>
 
-<main>
+    <h2>Meus hobbies</h2>
+    <ul>
+        <li>Ouvir música</li>
+        <li>Tocar instrumentos</li>
+        <li>Estudar programação</li>
+    </ul>
 
-<form action="">
-<table>
-
-    <tr>
-        <td colspan="2"><b>Dados Pessoais:</b></td>
-    </tr>
-
-    <tr>
-        <td>Nome:</td>
-        <td><input type="text" id="nome"></td>
-    </tr>
-
-    <tr>
-        <td>Data de Nascimento:</td>
-        <td><input type="date" id="dn"></td>
-    </tr>
-
-    <tr>
-        <td>E-mail:</td>
-        <td><input type="email" id="login"></td>
-    </tr>
-
-    <tr>
-        <td>Documentos:</td>
-        <td><input type="text" id="cpf"></td>
-    </tr>
-
-    <tr>
-        <td colspan="2"><b>Endereço:</b></td>
-    </tr>
-
-    <tr>
-        <td>Rua:</td>
-        <td><input type="text" id="rua"></td>
-    </tr>
-
-    <tr>
-        <td>Número:</td>
-        <td><input type="number" id="num"></td>
-    </tr>
-
-    <tr>
-        <td>Bairro:</td>
-        <td><input type="text" id="bar"></td>
-    </tr>
-
-    <tr>
-        <td>Cidade:</td>
-        <td><input type="text" id="cid"></td>
-    </tr>
-
-    <tr>
-        <td>CEP:</td>
-        <td>
-            <input type="text" id="cep1" size="9"> -
-            <input type="text" id="cep2" size="4">
-        </td>
-    </tr>
-
-    <tr>
-        <td colspan="2"><b>Cursos:</b></td>
-    </tr>
-
-    <tr>
-        <td colspan="2">Qual curso de TI você está fazendo?</td>
-    </tr>
-
-    <tr>
-        <td>
-            <input type="radio" name="cur" id="cl" value="Curso Livre">
-            Curso Livre
-        </td>
-    </tr>
-
-    <tr>
-        <td>
-            <input type="radio" name="cur" id="ct" value="Curso Técnico">
-            Curso Técnico
-        </td>
-    </tr>
-
-    <tr>
-        <td>
-            <input type="radio" name="cur" id="gr" value="Graduação">
-            Graduação
-        </td>
-    </tr>
-
-    <tr>
-        <td colspan="2">Qual linguagem você mais gosta?</td>
-    </tr>
-
-    <tr>
-        <td><input type="checkbox" id="html" value="HTML">HTML</td>
-    </tr>
-
-    <tr>
-        <td><input type="checkbox" id="php" value="PHP">PHP</td>
-    </tr>
-
-    <tr>
-        <td><input type="checkbox" id="js" value="JavaScript">JavaScript</td>
-    </tr>
-
-    <tr>
-        <td><input type="checkbox" id="python" value="Python">PYTHON</td>
-    </tr>
-
-    <tr>
-        <td><input type="checkbox" id="java" value="JAVA">JAVA</td>
-    </tr>
-
-    <tr>
-        <td colspan="2">Qual carreira quer seguir em TI?</td>
-    </tr>
-
-    <tr>
-        <td>
-            <select id="carreira">
-                <option value="Programador">Programador</option>
-                <option value="Analista">Analista</option>
-                <option value="Design">Design</option>
-                <option value="Analista de Dados">Analista de Dados</option>
-            </select>
-        </td>
-    </tr>
-
-    <tr>
-        <td><input type="reset" value="Apagar"></td>
-        <td><input type="button" onclick="ler()" value="Enviar"></td>
-    </tr>
-
-</table>
-</form>
-
-<div id="mostra"></div>
-
-</main>
-
-<footer>
-    <h1>Programação WEB 1 - Emanuel Pedro</h1>
-</footer>
-
-<script>
-
-function ler() {
-
-    let nome = document.getElementById("nome").value;
-    let dn = document.getElementById("dn").value;
-    let login = document.getElementById("login").value;
-    let cpf = document.getElementById("cpf").value;
-    let rua = document.getElementById("rua").value;
-    let num = document.getElementById("num").value;
-    let bar = document.getElementById("bar").value;
-    let cid = document.getElementById("cid").value;
-    let cep1 = document.getElementById("cep1").value;
-    let cep2 = document.getElementById("cep2").value;
-
-    let curso = "";
-
-    if(document.getElementById("cl").checked) {
-        curso = document.getElementById("cl").value;
-    }
-    else if(document.getElementById("ct").checked) {
-        curso = document.getElementById("ct").value;
-    }
-    else if(document.getElementById("gr").checked) {
-        curso = document.getElementById("gr").value;
-    }
-
-    let linguagens = "";
-
-    if(document.getElementById("html").checked) {
-        linguagens += "HTML ";
-    }
-
-    if(document.getElementById("php").checked) {
-        linguagens += "PHP ";
-    }
-
-    if(document.getElementById("js").checked) {
-        linguagens += "JavaScript ";
-    }
-
-    if(document.getElementById("python").checked) {
-        linguagens += "Python ";
-    }
-
-    if(document.getElementById("java").checked) {
-        linguagens += "JAVA ";
-    }
-
-    let carreira = document.getElementById("carreira").value;
-
-    document.getElementById("mostra").innerHTML = `
-
-        <h2>Dados Informados:</h2>
-
-        <p><b>Nome:</b> ${nome}</p>
-        <p><b>Nascimento:</b> ${dn}</p>
-        <p><b>E-mail:</b> ${login}</p>
-        <p><b>Documentos:</b> ${cpf}</p>
-
-        <h2>Endereço</h2>
-
-        <p><b>Rua:</b> ${rua}</p>
-        <p><b>Número:</b> ${num}</p>
-        <p><b>Bairro:</b> ${bar}</p>
-        <p><b>Cidade:</b> ${cid}</p>
-        <p><b>CEP:</b> ${cep1}-${cep2}</p>
-
-        <h2>Tecnologias</h2>
-
-        <p><b>Curso:</b> ${curso}</p>
-        <p><b>Linguagens:</b> ${linguagens}</p>
-        <p><b>Carreira:</b> ${carreira}</p>
-
-    `;
-
-}
-
-</script>
+    <h2>Meu objetivo</h2>
+    <p>Aprender HTML e me tornar um desenvolvedor.</p>
 
 </body>
 </html>
